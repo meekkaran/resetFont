@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            .divClass
+            {
+                font-size: 16px;
+                background-color: #e3e3e3;
+                width:500px;
+                padding:5px;
+            }
+        </style>
+        <script src="jquery-1.11.2.js"></script>
+        <script type="text/javascript">
+            $(document).read(function(){
+                $('#linkIncrease').click(function (){
+                    modifyFontSize('increase');
+                });
+                $('#linkDecrease').click(function (){
+                    modifyFontSize('decrease');
+                });
+                $('#linkReset').click(function (){
+                    modifyFontSize('reset');
+                });
+                function modifyFontSize(flag)
+                {
+                    var divElement=$('#divContent');
+                    var currentFontSize = divElement.css('font-size');
+
+                    if(flag == 'increase')
+                       currentFontSize +=3;
+                    else if(flag == 'decrease')
+                       currentFontSize -=3;
+                    else
+                       currentFontSize =16;   
+                }
+                divElement.css('font-size',currentFontSize);
+  
+            });
+        </script>
+    </head>
+    <body style="font-family: Arial">
+        Font-size :
+        <a id ="linkIncrease" href="#">Increase</a>
+        <a id ="linkDecrease" href="#">Derease</a>
+        <a id ="linkReset" href="#">Reset</a>
+        <br/><br/>
+        <div id="divContent" class="divClass">
+            <b>jQuery Tutorial</b>
+            <ul>
+                <li>what is</li>
+                <li>what is $document function</li>
+                <li>id selector</li>
+                <li>element selector</li>
+                <li>class selector</li>
+                <li>attribute selector</li>
+                <li>attribute value</li>
+                <li>case insensitive</li>
+                <li>jquery input</li>
+            </ul>
+        </div>
+    </body>
+</html>
